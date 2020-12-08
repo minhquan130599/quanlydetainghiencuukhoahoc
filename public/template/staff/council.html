@@ -1,0 +1,26 @@
+<div class="row" ng-if="council">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr class="active">
+                    <th>#</th>
+                    <th>Loại hội đồng</th>
+                    <th>Tên hội đồng</th>
+                    <th>Ngày làm việc</th>
+                    <th>Vai trò hội đồng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="c in council">
+                    <td><% $index+1 %></td>
+                    <td><% c.stenloaihd %></td>
+                    <td><% c.stenhd %></td>
+                    <td><% c.dngaylamviec %></td>
+                    <td><% c.smota %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--  /.col-sm-12 -->
+</div><!--  /.row -->
+
+<div ng-if="!council">Không có dữ liệu</div>

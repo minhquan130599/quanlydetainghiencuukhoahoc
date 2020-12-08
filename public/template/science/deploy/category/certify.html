@@ -1,0 +1,9 @@
+<div ng-if="certify">
+	<p><strong>Ngày cấp chứng nhận:</strong> <% certify.dngaycapgiaycn %></p>
+	<p><strong>Người ký:</strong> <% certify.snguoikycn %></p>
+	<p><strong>File báo cáo mềm:</strong> <a href="<% certify.filebanmem %>">Tải xuống</a></p>
+	<p><strong>Ghi chú:</strong> <% certify.sghichu %></p>
+	<p><strong>Thông báo(qua email):</strong> <% (certify.bsendmail == 1) ? 'Đã thông báo' : 'Chưa thông báo' %></p>
+</div>
+
+<div ng-if="!certify">Không có dữ liệu.</div>

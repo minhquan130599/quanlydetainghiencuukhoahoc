@@ -1,0 +1,43 @@
+<div class="row" ng-controller="ScienceController">
+    <div class="col-sm-4">
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">Cập nhật quá trình công tác</legend>
+            <form name="frmBusiness" autocomplete="off" novalidate>
+                <div class="form-group">
+                    <label>Khoảng thời gian <span class="text-red required">*</span></label>
+                    <div class="input-daterange input-group">
+                        <input type="text" class="input-small form-control" name="dngaybd" ng-model="qtct.dngaybd" placeholder="tháng/năm" ng-pattern="/^((\d{2})\/(\d{4}))$/" ng-required="true">
+                        <span class="input-group-addon"><strong>đến</strong></span>
+                        <input type="text" class="input-small form-control" name="dngaykt" ng-model="qtct.dngaykt" placeholder="tháng/năm" ng-pattern="/^((\d{2})\/(\d{4}))$/" ng-required="true">
+                    </div>
+                    <span class="text-red" ng-show="frmBusiness.$dirty && frmBusiness.dngaybd.$error.required">Bạn chưa nhập tháng bắt đầu</span>
+                    <span class="text-red" ng-show="frmBusiness.$dirty && frmBusiness.dngaybd.$error.pattern">Tháng bắt đầu không đúng</span>
+                    <span class="text-red" ng-show="frmBusiness.$dirty && frmBusiness.dngaykt.$error.required">Bạn chưa nhập tháng kết thúc</span>
+                    <span class="text-red" ng-show="frmBusiness.$dirty && frmBusiness.dngaykt.$error.pattern">Tháng kết thúc không đúng</span>
+                </div>
+
+                <div class="form-group">
+                    <label>Mô tả <span class="text-red">*</span></label>
+                    <textarea name="smota" class="form-control" rows="1" ng-model="qtct.smota" ng-required="true"></textarea>
+                    <span class="text-red" ng-show="frmBusiness.$dirty && frmBusiness.smota.$error.required">Bạn chưa nhập mô tả</span>
+                </div>
+
+                <div class="form-group">
+                    <label>Ghi chú</label>
+                    <textarea name="sghichu" class="form-control" rows="1" ng-model="qtct.sghichu"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" ng-disabled="!frmBusiness.$dirty || (frmBusiness.$dirty && frmBusiness.$invalid)" ng-click="qtct_save(state, id)">Lưu thông tin</button>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+    
+    <div class="col-sm-8">
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">Danh sách quá trình công tác</legend>
+            <div ng-include="'/template/science/business_list.html'"></div>
+        </fieldset>
+    </div><!-- /.col-6-right -->
+</div><!-- /.row -->

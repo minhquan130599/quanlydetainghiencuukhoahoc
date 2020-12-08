@@ -1,0 +1,24 @@
+<div ng-if="expense.length">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr class="active">
+                <th class="text-center">#</th>
+                <th class="text-center">Ngày cấp</th>
+                <th class="text-center">Người quyết định</th>
+                <th class="text-center">Số kinh phí</th>
+                <th class="text-center">Ghi chú</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="e in expense">
+                <td class="text-center"><% $index+1 %></td>
+                <td class="text-center"><% e.inam %></td>
+                <td class="text-center">Cán bộ quản lý</td>
+                <td class="text-center"><% e.fkinhphi %></td>
+                <td class="text-center"><% e.sghichu %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div ng-if="!expense.length">Không có dữ liệu.</div>

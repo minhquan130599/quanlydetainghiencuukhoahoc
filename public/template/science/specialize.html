@@ -1,0 +1,76 @@
+<div class="row no-margin" ng-controller="SpecializeController">
+    <div class="pull-right">
+        <a class="btn btn-primary" data-toggle="modal" href='#specializeModal'><span class="glyphicon glyphicon-plus"></span> Thêm</a>
+    </div><!--  /.pull-right --> 
+    <div class="modal fade" id="specializeModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Cập nhật quá trình chuyên môn</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-sm-12">
+                        <form name="frmSpecialize" class="form-horizontal" autocomplete="off">
+                            <div class="form-group">
+                                <label>Khoảng thời gian <span class="text-red required">*</span></label>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" class="input-small form-control" name="dngaybd" ng-model="qtcm.dngaybd" placeholder="tháng/năm" ng-pattern="/^((\d{2})\/(\d{4}))$/" ng-required="true">
+                                        <p class="text-danger" ng-show="frmSpecialize.$dirty && frmSpecialize.dngaybd.$error.required">Bạn chưa nhập tháng bắt đầu</p>
+                                        <p class="text-danger" ng-show="frmSpecialize.$dirty && frmSpecialize.dngaybd.$error.pattern">Tháng bắt đầu không đúng</p>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <input type="text" class="input-small form-control" name="dngaykt" ng-model="qtcm.dngaykt" placeholder="tháng/năm" ng-pattern="/^((\d{2})\/(\d{4}))$/" ng-required="true">
+                                        <p class="text-danger" ng-show="frmSpecialize.$dirty && frmSpecialize.dngaykt.$error.required">Bạn chưa nhập tháng kết thúc</p>
+                                        <p class="text-danger" ng-show="frmSpecialize.$dirty && frmSpecialize.dngaykt.$error.pattern">Tháng kết thúc không đúng</p>
+                                    </div><!--  /.col-sm-6 -->
+                                </div><!--  /.row -->
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tên trường <span class="text-red required">*</span></label>
+                                <input type="text" name="stentruong" class="form-control" ng-model="qtcm.stentruong" ng-required="true">
+                                <p class="text-danger" ng-show="frmSpecialize.$dirty && frmSpecialize.stentruong.$error.required">Bạn chưa nhập tên trường</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Chuyên ngành đào tạo <span class="text-red required">*</span></label>
+                                <input type="text" name="schuyennganhdaotao" class="form-control" ng-model="qtcm.schuyennganhdaotao" ng-required="true">
+                                <p class="text-danger" ng-show="frmSpecialize.$dirty && frmSpecialize.schuyennganhdaotao.$error.required">Bạn chưa nhập chuyên ngành đào tạo</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Hình thức đào tạo <span class="text-red required">*</span></label>
+                                <input type="text" name="shinhthucdaotao" class="form-control" ng-model="qtcm.shinhthucdaotao" ng-required="true">
+                                <p class="text-danger" ng-show="frmSpecialize.$dirty && frmSpecialize.shinhthucdaotao.$error.required">Bạn chưa nhập hình thức đào tạo</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Văn bằng</label>
+                                <input type="text" name="svanbang" class="form-control" ng-model="qtcm.svanbang">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Ghi chú</label>
+                                <textarea name="sghichu" class="form-control" rows="1" ng-model="qtcm.sghichu"></textarea>
+                            </div>
+                        </form>
+                    </div><!--  /.col-sm-12 -->
+                </div><!-- /.modal-body -->
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" ng-disabled="!frmSpecialize.$dirty || (frmSpecialize.$dirty && frmSpecialize.$invalid)" ng-click="qtcm_save(state, id)">Lưu thông tin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--  /.row -->
+
+<div class="row" style="margin-top: 10px;">
+    <div class="col-sm-12">
+        <div ng-include="'/template/science/specialize_list.html'"></div>    
+    </div><!--  /.col-sm-12 -->
+</div><!--  /.row -->

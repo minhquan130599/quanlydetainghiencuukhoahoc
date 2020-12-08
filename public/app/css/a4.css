@@ -1,0 +1,177 @@
+@page {
+   size: 7in 9.25in;
+   margin: 27mm 16mm 27mm 16mm;
+}
+body {
+  background: rgb(204,204,204);
+  -moz-transform: scale(0.8, 0.8); /* Moz-browsers */
+  zoom: 0.8; /* Other non-webkit browsers */
+  zoom: 80%; /* Webkit browsers */
+}
+page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+page[size="A4"] {
+  width: 21cm;
+  /*height: 29.7cm;*/
+  height: auto;
+  page-break-after: always;
+}
+page[size="A4"][layout="portrait"] {
+  width: 29.7cm;
+  height: 21cm;
+}
+page[size="A3"] {
+  width: 29.7cm;
+  height: 42cm;
+}
+page[size="A3"][layout="portrait"] {
+  width: 42cm;
+  height: 29.7cm;
+}
+page[size="A5"] {
+  width: 14.8cm;
+  height: 21cm;
+}
+page[size="A5"][layout="portrait"] {
+  width: 21cm;
+  height: 14.8cm;
+}
+@media print {
+  body, page {
+    margin: 0;
+    box-shadow: 0;
+}
+table { page-break-inside:auto }
+tr    { page-break-inside:avoid; page-break-after:auto }
+thead { display:table-header-group }
+tfoot { display:table-footer-group }
+}
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  font-family:"Times New Roman", Times, serif;
+  font-size:16px;
+}
+div{
+  margin:10px 0px;
+}
+#container{
+  width:650px;
+  margin:0px auto;
+  padding:10px;
+    /*background: url('http://i.imgur.com/OVSdjOf.png') repeat-y;
+    -webkit-print-color-adjust:exact;*/
+}
+.left-header{
+    float:left;
+    width:45%;
+}
+.right-header{
+    float:right;
+    text-align:center;
+
+}
+.bold-center{
+    text-align:center;
+}
+.text-right{
+    text-align:right;
+    position:relative;
+    top:-10px;
+}
+.italic, .bold-italic{
+    font-style:italic;
+}
+.bold, .bold-italic, .bold-underline{
+    font-weight:bold;
+}
+.bold-underline{
+    text-decoration:underline;
+}
+.indent{
+    text-indent:35px;
+}
+.width-40{
+    width:40px;
+}
+.width-60{
+    width:60px;
+}
+.width-100{
+    width:100px;
+}
+.width-130{
+    width:130px;
+}
+.width-150{
+    width:150px;
+}
+.width-170{
+    width:170px;
+}
+.width-240{
+    width:240px;
+}
+.width-300{
+    width:300px;
+}
+
+
+td{
+    padding-top:7px;
+}
+.gachduoi{
+    position:relative;
+    right:0px;
+    top:-20px;
+}
+
+.ten_donvi {
+
+    font-weight: bold;
+}
+
+.tieude_vanban {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.main_body_content {
+    line-height: 27px;
+    margin-left: 2
+}
+
+#main_table {
+    width: 100%;
+}
+
+#main_table td {
+    padding: 0 5px;
+}
+
+.result {
+    border: 1px solid;
+}
+
+.line {
+    border-bottom: 1px dotted;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+div.square {
+  border: solid 1px black;
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+}

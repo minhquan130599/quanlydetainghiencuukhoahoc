@@ -1,0 +1,65 @@
+<div ng-if="expertise.length">
+    <strong>Kết quả thẩm định đề tài khoa học</strong>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr class="active">
+                <th class="text-center">#</th>
+                <th class="text-center">Hội đồng thẩm định</th>
+                <th class="text-center">Ngày làm việc</th>
+                <th class="text-center">Ngày thẩm định</th>
+                <th class="text-center">Nội dung thẩm định</th>
+                <th class="text-center">Kết quả</th>
+                <th class="text-center">Thông báo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="e in expertise" ng-class='{success:$first}'>
+                <td class="text-center"><% $index+1 %></td>
+                <td>
+                    <% e.stenhd %> <br />
+                    (MS: <b><% e.smahoidong %></b>)
+                </td>
+                <td class="text-center"><% e.dngaylamviec %></td>
+                <td class="text-center"><% e.dngaybc %></td>
+                <td class="text-center"><span custom-popover popover-html="<% e.snoidung %>" popover-placement="left" popover-label="Chi tiết"></td>
+                <td class="text-center"><% e.bketqua == 1 ? 'Đạt' : 'Không đạt' %></td>
+                <td class="text-center"><% e.bsendmail == 1 ? 'Đã email thông báo cho chủ nhiệm' : 'Chưa thông báo' %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div ng-if="expertise_member_council[0]">
+    <strong>Danh sách thành viên của hội đồng thẩm định</strong>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr class="active">
+                <th>#</th>
+                <th>Họ tên cán bộ</th>
+                <th>Đơn vị công tác</th>
+                <th>Vai trò hội đồng</th>
+                <th>Ghi chú</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><% expertise_member_council[0].shocvan %></td>
+                <td><% expertise_member_council[0].stendv %></td>
+                <td><% expertise_member_council[0].smota %></td>
+                <td rowspan="<% expertise_member_council.length %>">
+                    <% expertise_member_council[0].sghichu %>
+                </td>
+            </tr>
+
+            <tr ng-repeat-end ng-repeat="member in expertise_member_council.slice(1)">
+                <td><% $index+2 %></td>
+                <td><% member.shocvan %></td>
+                <td><% member.stendv %></td>
+                <td><% member.smota %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div ng-if="!expertise.length">Không có dữ liệu.</div>

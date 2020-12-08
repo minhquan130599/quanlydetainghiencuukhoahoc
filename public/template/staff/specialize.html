@@ -1,0 +1,24 @@
+﻿<table class="table table-hover table-bordered" ng-if="specialize">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Khoảng thời gian</th>
+			<th>Đơn vị đào tạo</th>
+			<th>Chuyên ngành đào tạo</th>
+			<th>Hình thức đào tạo</th>
+			<th>Văn bằng</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="s in specialize">
+			<td><% $index+1 %></td>
+			<td><% s.skhoangthoigian %></td>
+			<td><% s.stentruong %></td>
+			<td><% s.schuyennganhdaotao %></td>
+			<td><% s.shinhthucdaotao %></td>
+			<td><% s.svanbang %></td>
+		</tr>
+	</tbody>
+</table>
+
+<div ng-if="!specialize">Không có dữ liệu</div>

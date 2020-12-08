@@ -1,0 +1,54 @@
+<div class="row" ng-if="achievement"> 
+    <div class="col-sm-6">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>Chức vụ</th>
+                <td><strong class="text-green"><% achievement.schucvu %></strong></td>
+            </tr>
+
+            <tr>
+                <th>Danh hiệu</th>
+                <td><strong class="text-green"><% achievement.sdanhhieu %></strong></td>
+            </tr>
+
+            <tr>
+                <th>Thi đua khen thưởng</th>
+                <td><strong class="text-green"><% achievement.skhenthuong %></strong></td>
+            </tr>
+
+            <tr>
+                <th>Lý luận chính trị</th>
+                <td><strong class="text-green"><% achievement.slyluanchinhtri %></strong></td>
+            </tr>
+        </table>
+    </div><!--  /.col-sm-4 -->
+
+    <div class="col-sm-6">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>Năng lực</th>
+                <td>
+                    <strong class="text-green">
+                        <% achievement.snangluc %>
+                    </strong>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Thành tựu</th>
+                <td>
+                    <strong class="text-green">
+                        <% achievement.sthanhtuukh %>
+                    </strong>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Ghi chú</th>
+                <td><strong class="text-green"><% achievement.sghichuthem %></strong></td>
+            </tr>
+        </table>
+    </div><!--  /.col-sm-4 -->
+</div><!--  /.row -->
+
+<div ng-if="!achievement">Không có dữ liệu</div>

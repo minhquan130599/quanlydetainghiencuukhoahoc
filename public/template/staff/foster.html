@@ -1,0 +1,24 @@
+<table class="table table-hover table-bordered" ng-if="foster">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Khoảng thời gian</th>
+            <th>Khóa học</th>
+            <th>Hình thức</th>
+            <th>Chứng chỉ</th>
+            <th>Ghi chú</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="f in foster">
+            <td><% $index+1 %></td>
+            <td><% f.skhoangthoigian %></td>
+            <td><% f.skhoahoc %></td>
+            <td><% f.shinhthuc %></td>
+            <td><% f.schungchi %></td>
+            <td><% f.sghichu %></td>
+        </tr>
+    </tbody>
+</table>
+
+<div ng-if="!foster">Không có dữ liệu</div>

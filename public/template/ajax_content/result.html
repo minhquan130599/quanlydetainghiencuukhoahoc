@@ -1,0 +1,37 @@
+<a class="btn btn-primary btn-block" data-toggle="modal" href=''>Thẩm định ngày </a>
+<div class="modal fade" id="expertise-content{{$key}}">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">
+					Thẩm định ngày {{ pr($data) }}
+					<p>Đề tài: <small class="topic-name"></small></p>
+				</h4>
+			</div>
+			<div class="modal-body">
+				<table class="table table-hover table-bordered">
+					<tr>
+						<th>Ngày duyệt</th>
+						<td>{!! $exp->dngaybc !!}</td>
+					</tr>
+					<tr>
+						<th>Kết quả</th>
+						<td>{!!($exp->bketqua == 1) ? 'Đạt' : 'Không đạt' !!}</td>
+					</tr>
+					<tr>
+						<th>Nội dung</th>
+						<td>{!! $exp->snoidung !!}</td>
+					</tr>
+					<tr>
+						<th>Ghi chú</th>
+						<td>{!! $exp->sghichu !!}</td>
+					</tr>
+				</table>
+			</div><!-- /.modal-body -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,61 @@
+<table class="table table-hover table-bordered" ng-if="liquidation">
+    <tbody>
+        <tr>
+            <th>Hội đồng thanh lý</th>
+            <th class="text-green"><% liquidation.stenhd %></th>
+        </tr>
+
+        <tr>
+            <th>Mã số hội đồng</th>
+            <th class="text-green"><% liquidation.smahoidong %></th>
+        </tr>
+        
+        <tr>
+            <th>Các thành viên thuộc hội đồng</th>
+            <th class="text-green">
+               <div ng-if="liquidation_member_council">
+                   <div ng-repeat="member in liquidation_member_council">
+                        <!-- <div ng-if="member.pk_imavthd == 1">
+                            <b class="text-green">
+                                <% $index+1 %>. 
+                                <% member.shocvan %>(<% member.stendv %>) -  <% member.smota %>
+                            </b>
+                        </div> -->
+                        
+                        <% $index+1 %>. 
+                        <% member.shocvan %>(<% member.stendv %>) -  <% member.smota %>
+                   </div>
+               </div><!-- /.Có dữ liệu thành viên HĐ -->
+
+               <div ng-if="!liquidation_member_council">Không có dữ liệu.</div>
+            </th>
+        </tr>
+
+        <tr>
+            <th>Ngày thành lập</th>
+            <th class="text-green"><% liquidation.dngaythanhlap %></th>
+        </tr>
+
+        <tr>
+            <th>Ngày làm việc</th>
+            <th class="text-green"><% liquidation.dngaylamviec %></th>
+        </tr>
+
+        <tr>
+            <th>Ngày thanh lý đề tài</th>
+            <th class="text-green"><% liquidation.dngaytl %></th>
+        </tr>
+
+        <tr>
+            <th>Lý do thanh lý</th>
+            <th class="text-green"><% liquidation.slydo %></th>
+        </tr>
+
+        <tr>
+            <th>Ghi chú</th>
+            <th class="text-green"><% liquidation.sghichu %></th>
+        </tr>
+    </tbody>
+</table>
+
+<div ng-if="!liquidation">Không có dữ liệu</div>

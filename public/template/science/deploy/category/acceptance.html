@@ -1,0 +1,103 @@
+<div class="row" ng-if="acceptance">
+    <div class="col-sm-5">
+        <table class="table table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <th>Hội đồng nghiệm thu</th>
+                    <th class="text-green"><% acceptance.stenhd %></td>
+                </tr>
+
+                <tr>
+                    <th>Mã số hội đồng</th>
+                    <th class="text-green"><% acceptance.smahoidong %></td>
+                </tr>
+
+                <tr>
+                    <th>Ngày thành lập</th>
+                    <th class="text-green"><% acceptance.dngaythanhlap %></td>
+                </tr>
+
+                <tr>
+                    <th>Ngày làm việc</th>
+                    <th class="text-green"><% acceptance.dngaylamviec %></td>
+                </tr>
+                
+                <div ng-if="acceptance_member_council">
+                    <tr>
+                        <th>Các thành viên thuộc hội đồng</th>
+                        <th class="text-green">
+                            <div ng-repeat="member in acceptance_member_council">
+                                <% $index+1 %>. <% member.shocvan %> <br />
+                                &nbsp;&nbsp; - <% member.stendv %> <br />
+                                &nbsp;&nbsp; - Vai trò: <% member.smota %> <br />
+                            </div>
+                        </th>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+    </div><!--  /.col-sm-6 -->
+
+    <div class="col-sm-7">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>Số quyết định nghiệm thu cơ sở</th>
+                    <th class="text-green"><% acceptance.ssoqdntcs %></td>
+                </tr>
+
+                <tr>
+                    <th>Điểm nghiệm thu cơ sở</th>
+                    <th class="text-green"><% acceptance.fdiemntcs %></td>
+                </tr>
+
+                <tr>
+                    <th>Ngày nghiệm thu cơ sở</th>
+                    <th class="text-green"><% acceptance.dngayntcs %></td>
+                </tr>
+
+                <tr>
+                    <th>Ngày quyết định nghiệm thu chương trình</th>
+                    <th class="text-green"><% acceptance.dngayqdntct %></td>
+                </tr>
+
+                <tr>
+                    <th>Số quyết định nghiệm thu chương trình</th>
+                    <th class="text-green"><% acceptance.ssoqdntct %></td>
+                </tr>
+
+                <tr>
+                    <th>Ngày quyết định nghiệm thu chương trình</th>
+                    <th class="text-green"><% acceptance.dngayqdntct%></td>
+                </tr>
+
+                <tr>
+                    <th>Ngày nghiệm thu chương trình</th>
+                    <th class="text-green"><% acceptance.dngayntct %></td>
+                </tr>
+
+                <tr>
+                    <th>Điểm chương trình</th>
+                    <th class="text-green"><% acceptance.fdiemtbntct %></td>
+                </tr>
+
+                <tr>
+                    <th>Kết quả nghiệm thu chương trình</th>
+                    <th class="text-green"><% acceptance.sketquantct %></td>
+                </tr>
+
+                <tr>
+                    <th>Ghi chú</th>
+                    <th class="text-green"><% acceptance.sghichu %></td>
+                </tr>
+
+                <tr>
+                    <th>Thông báo kết quả tới chủ nhiệm</th>
+                    <th class="text-green"><% (acceptance.bsendmail == 1) ? 'Đã email thông báo' : 'Chưa thông báo' %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--  /.col-sm-6 -->
+</div><!--  /.row -->
+
+<div ng-if="!acceptance">Không có dữ liệu</div>

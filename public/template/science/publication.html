@@ -1,0 +1,34 @@
+<div class="row no-margin" ng-controller="PublicationController">
+    <div class="col-sm-5">
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">Cập nhật ấn phẩm</legend>
+            <form name="frmPublic" autocomplete="off" novalidate>
+                <div class="form-group">
+                    <label>Tên ấn phẩm <span class="text-red">*</span></label>
+                    <input type="text" class="form-control" name="stenanpham" ng-model="ap.stenanpham" ng-required="true">
+                    <span class="text-red" ng-show="frmPublic.$dirty && frmPublic.stenanpham.$error.required">Chưa nhập tên ấn phẩm</span>
+                </div>
+
+                <div class="form-group">
+                    <label>Năm xuất bản <span class="text-red">*</span></label>
+                    <input type="text" class="form-control" name="snamxuatban" ng-model="ap.snamxuatban" ng-required="true">
+                    <span class="text-red" ng-show="frmPublic.$dirty && frmPublic.snamxuatban.$error.required">Chưa nhập năm xuất bản</span>
+                </div>
+                
+                <div class="form-group">
+                    <label>Ghi chú</label>
+                    <textarea name="sghichu" class="form-control" rows="3" ng-model="ap.sghichu"></textarea>
+                </div>
+                
+                <button type="button" class="btn btn-primary" ng-disabled="!frmPublic.$dirty || (frmPublic.$dirty && frmPublic.$invalid)" ng-click="ap_save(state, id)">Cập nhật</button>
+            </form>
+        </fieldset>
+    </div>
+
+    <div class="col-sm-7">
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">Danh sách ấn phẩm</legend>
+            <div ng-include="'/template/science/publication_list.html'"></div>
+        </fieldset>    
+    </div>
+</div><!--  /.row -->

@@ -1,0 +1,25 @@
+<table class="table table-hover table-bordered" ng-if="work">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Khoảng thời gian</th>
+            <th>Tên công trình</th>
+            <th>Vị trí làm việc </th>
+            <th>Sản phẩm</th>
+            <th>Ghi chú</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="w in work">
+            <td><% $index+1 %></td>
+            <td><% w.skhoangthoigian %></td>
+            <td><% w.stencongtrinh %></td>
+            <td><% w.svitricongviec %></td>
+            <td><% w.ssanpham %></td>
+            <td><% w.ssghichu %></td>
+        </tr>
+    </tbody>
+</table>
+
+<div ng-if="!work">Không có dữ liệu</div>

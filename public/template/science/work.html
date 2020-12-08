@@ -1,0 +1,71 @@
+<div class="row no-margin" ng-controller="WorkController">
+    <div class="pull-right">
+        <a class="btn btn-primary" data-toggle="modal" href='#workModal'><span class="glyphicon glyphicon-plus"></span> Thêm</a>
+    </div><!--  /.pull-right --> 
+    <div class="modal fade" id="workModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Cập nhật công trình đề tài</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="col-sm-12">
+                        <form name="frmWork" class="form-horizontal" autocomplete="off">
+                            <div class="form-group">
+                                <label>Khoảng thời gian <span class="text-red required">*</span></label>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" class="input-small form-control" name="dngaybd" ng-model="ctdt.dngaybd" placeholder="tháng/năm"  ng-required="true">
+                                        <p class="text-danger" ng-show="frmWork.$dirty && frmWork.dngaybd.$error.required">Bạn chưa nhập tháng bắt đầu</p>
+                                        <p class="text-danger" ng-show="frmWork.$dirty && frmWork.dngaybd.$error.pattern">Tháng bắt đầu không đúng</p>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <input type="text" class="input-small form-control" name="dngaykt" ng-model="ctdt.dngaykt" placeholder="tháng/năm"  ng-required="true">
+                                        <p class="text-danger" ng-show="frmWork.$dirty && frmWork.dngaykt.$error.required">Bạn chưa nhập tháng kết thúc</p>
+                                        <p class="text-danger" ng-show="frmWork.$dirty && frmWork.dngaykt.$error.pattern">Tháng kết thúc không đúng</p>
+                                    </div><!--  /.col-sm-6 -->
+                                </div><!--  /.row -->
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tên công trình <span class="text-red required">*</span></label>
+                                <input type="text" name="stencongtrinh" class="form-control" ng-model="ctdt.stencongtrinh" ng-required="true">
+                                <p class="text-danger" ng-show="frmWork.$dirty && frmWork.stencongtrinh.$error.required">Bạn chưa nhập tên công trình</p>
+                            </div>
+
+                           
+                            <div class="form-group">
+                                <label>Sản phẩm<span class="text-red required">*</span></label>
+                                <input type="text" name="ssanpham" class="form-control" ng-model="ctdt.ssanpham" ng-required="true">
+                                <p class="text-danger" ng-show="frmWork.$dirty && frmWork.ssanpham.$error.required">Bạn chưa nhập sản phẩm</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Vị trí làm việc</label>
+                                <input type="text" name="svitricongviec" class="form-control" ng-model="ctdt.svitricongviec">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Ghi chú</label>
+                                <textarea name="sghichu" class="form-control" rows="1" ng-model="ctdt.sghichu"></textarea>
+                            </div>
+                        </form>
+                    </div><!--  /.col-sm-12 -->
+                </div><!-- /.modal-body -->
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" ng-disabled="!frmWork.$dirty || (frmWork.$dirty && frmWork.$invalid)" ng-click="ctdt_save(state, id)">Lưu thông tin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--  /.row -->
+
+<div class="row" style="margin-top: 10px;">
+    <div class="col-sm-12">
+        <div ng-include="'/template/science/work_list.html'"></div>    
+    </div><!--  /.col-sm-12 -->
+</div><!--  /.row -->

@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-bordered table-hover" ng-if="topic_join">
+            <thead>
+                <tr class="active">
+                    <th>#</th>
+                    <th>Đề tài khoa học đã tham gia</th>
+                    <th>Thời gian thực hiện</th>
+                    <th>Vai trò khi tham gia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="j in topic_join">
+                    <td><% $index+1 %></td>
+                    <td><% j.stendt %></td>
+                    <td><% j.dngaybd %> - <% j.dngaykt %></td>
+                    <td><% j.svaitro %></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div ng-if="!topic_join">Không có dữ liệu</div>
+    </div><!--  /.col-sm-12 -->
+</div><!--  /.row -->

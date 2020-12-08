@@ -1,0 +1,62 @@
+<div ng-if="topic">
+    <b class="text-bold no-padding">1. Thông tin chung</b> <br />
+    <b>Đề tài: <span class="text-green"><% topic.stendt %></span></b> <br />
+    <b>Trạng thái hiện tại của đề tài: <span class="text-green"><% topic.stentt %></span></b>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="active">
+                <th class="text-center">Mã số đề tài</th>
+                <th class="text-center">Loại đề tài</th>
+                <th class="text-center">Lĩnh vực</th>
+                <th class="text-center">Chủ nhiệm đề tài</th>
+                <th class="text-center">Thời gian thực hiện</th>
+                <th class="text-center">Các thành viên tham gia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="text-center"><% topic.smasodetai %></td>
+                <td class="text-center"><% topic.stenldt %></td>
+                <td class="text-center"><% topic.stenlv %></td>
+                <td class="text-center"><% topic.shocvan %></td>
+                <td class="text-center">Từ <% topic.dngaybd %> đến <% topic.dngaykt %></td>
+                <td>
+                    <div ng-repeat="m in member">
+                        <div ng-if="m.pk_imavt == 3">
+                            <b class="text-green"><% m.shocvan %> - <% m.svaitro %></b>
+                        </div> 
+
+                        <div ng-if="m.pk_imavt != 3">
+                            <span><% m.shocvan %> - <% m.svaitro %></span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+
+    <p class="text-bold">2. Tính cấp thiết</p>
+       <div ng-bind-html="topic.scapthiet"></div><hr />
+
+
+    <p class="text-bold">3. Mục tiêu nghiên cứu</p>
+        <div ng-bind-html="topic.smuctieu"></div><hr />
+
+
+    <p class="text-bold">4. Nội dung đề tài</p> 
+        <div ng-bind-html="topic.snoidungdaicuong"></div><hr />
+
+
+    <p class="text-bold">5. Phương pháp nghiên cứu</p>
+        <div ng-bind-html="topic.sphuongphap"></div><hr />
+
+
+    <p class="text-bold">6. Kết cấu đề tài</p>
+        <div ng-bind-html="topic.sketcaudetai"></div><hr />
+
+    <p class="text-bold">7. Sản phẩm và địa chỉ ứng dụng</p>
+        <div ng-bind-html="topic.ssanpham"></div>
+</div><!-- /.Có dữ liệu -->
+
+<div ng-if="!topic">Không có dữ liệu đề tài.</div>

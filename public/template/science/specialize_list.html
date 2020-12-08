@@ -1,0 +1,33 @@
+<table class="table table-hover table-bordered" ng-if="specialize">
+	<thead>
+		<tr class="active">
+			<th>#</th>
+			<th>Khoảng thời gian</th>
+			<th>Đơn vị đào tạo</th>
+			<th>Chuyên ngành đào tạo</th>
+			<th>Hình thức đào tạo</th>
+			<th>Văn bằng</th>
+			<th>Ghi chú</th>
+			<th>Tác vụ</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="s in specialize">
+			<td><% $index+1 %></td>
+			<td><% s.skhoangthoigian %></td>
+			<td><% s.stentruong %></td>
+			<td><% s.schuyennganhdaotao %></td>
+			<td><% s.shinhthucdaotao %></td>
+			<td><% s.svanbang %></td>
+			<td><% s.sghichu %></td>
+			<td>
+				<div class="btn-group" role="group">
+				  	<button type="button" class="btn btn-default btn-sm" ng-click="edit_specialize(s.pk_imaqtcm)"><span class="glyphicon glyphicon-pencil"></span></button>
+				  	<button type="button" class="btn btn-default btn-sm" ng-click="remove_specialize(s.pk_imaqtcm, s.pk_smacanbo)"><span class="glyphicon glyphicon-trash"></span></button>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div ng-if="!specialize">Không có dữ liệu</div>

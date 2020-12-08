@@ -1,0 +1,27 @@
+<table class="table table-hover table-bordered" ng-if="publication">
+	<thead>
+		<tr class="active">
+			<th>#</th>
+			<th>Tên ấn phẩm</th>
+			<th>Năm xuất bản</th>
+			<th>Ghi chú</th>
+			<th>Tác vụ</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="p in publication">
+			<td><% $index+1 %></td>
+			<td><% p.stenanpham %></td>
+			<td><% p.snamxuatban %></td>
+			<td><% p.sghichu %></td>
+			<td>
+				<div class="btn-group" role="group">
+				  	<button type="button" class="btn btn-default btn-sm" ng-click="edit_publication(p.pk_imaap)"><span class="glyphicon glyphicon-pencil"></span></button>
+				  	<button type="button" class="btn btn-default btn-sm" ng-click="remove_publication(p.pk_imaap, p.pk_smacanbo)"><span class="glyphicon glyphicon-trash"></span></button>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div ng-if="!publication">Không có dữ liệu</div>
